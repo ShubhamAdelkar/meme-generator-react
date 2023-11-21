@@ -23,7 +23,7 @@ function Hero() {
         <button onClick={getMemeImage}>Get new meme image</button>
       </div>
       <div className="hero-output">
-        <img src={memeImage} alt="meme-image" />
+        <img src={memeImage} alt="" />
       </div>
     </div>
   );
