@@ -4,7 +4,12 @@ import { useState } from "react";
 import memesData from "./memesData";
 import seedrandom from "seedrandom";
 function Hero() {
-  const [memeImage, setMemeImage] = React.useState("");
+  const [meme, setMeme] = React.useState({
+    topText: "",
+    bottomText: "",
+    randomImage: "http://i.imgflip.com/1bij.jpg",
+  });
+  const [memeImage, setMemeImage] = React.useState(memesData);
 
   function getMemeImage() {
     const memesArray = memesData.data.memes;
