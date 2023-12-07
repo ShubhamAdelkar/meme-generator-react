@@ -15,6 +15,11 @@ function Hero() {
     const memesArray = memesData.data.memes;
     const rng = seedrandom();
     const randomNumber = Math.floor(rng() * memesArray.length);
+    const url = memesArray[randomNumber].url;
+    setMeme((prevMeme) => ({
+      ...prevMeme,
+      randomImage: url,
+    }));
     setMemeImage(memesArray[randomNumber].url);
   }
 
@@ -25,10 +30,10 @@ function Hero() {
           <input type="text" placeholder="top text"></input>
           <input type="text" placeholder="bottom tex"></input>
         </div>
-        <button onClick={getMemeImage}>Get new meme image</button>
+        <button onClick={getMemeImage}>Get new meme image 🖼️</button>
       </div>
       <div className="hero-output">
-        <img src={memeImage} alt="" />
+        <img src={meme.randomImage} alt="" />
       </div>
     </div>
   );
